@@ -1,0 +1,480 @@
+{
+  "metadata": {
+    "project": "Can We Still Trust This Answer?",
+    "vendor": "Northstar Cloud (fictional)",
+    "data": "Entirely fictional; rules-based fixture simulation, NOT a live LLM benchmark",
+    "old_version": "2026-01",
+    "current_version": "2026-09"
+  },
+  "change_log": {
+    "changed_policies": [
+      "AUTH-01",
+      "DATA-02",
+      "INC-03",
+      "LOG-05",
+      "DELETE-11",
+      "ACCESS-12"
+    ],
+    "unchanged_policies": 6
+  },
+  "metrics": {
+    "before_review": {
+      "total": 12,
+      "accurate": 5,
+      "cited": 11,
+      "current_source": 0,
+      "publishable": 0,
+      "review_required": 12
+    },
+    "after_refresh": {
+      "total": 12,
+      "accurate": 12,
+      "cited": 12,
+      "current_source": 12,
+      "publishable": 12,
+      "review_required": 0
+    }
+  },
+  "cases": [
+    {
+      "phase": "before_review",
+      "policy_id": "AUTH-01",
+      "topic": "sso",
+      "question": "Is SSO available on all plans?",
+      "current_answer": "SSO is available on Business and Enterprise plans only.",
+      "answer": "SSO is available on all plans.",
+      "source_version": "2026-01",
+      "citation": "AUTH-01",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "AUTH-01",
+      "topic": "sso",
+      "question": "Is SSO available on all plans?",
+      "current_answer": "SSO is available on Business and Enterprise plans only.",
+      "answer": "SSO is available on Business and Enterprise plans only.",
+      "source_version": "2026-09",
+      "citation": "AUTH-01",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "DATA-02",
+      "topic": "data_residency",
+      "question": "Where can customer data be hosted?",
+      "current_answer": "Customers can choose US or EU hosting.",
+      "answer": "Customer data is hosted in the United States only.",
+      "source_version": "2026-01",
+      "citation": "DATA-02",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "DATA-02",
+      "topic": "data_residency",
+      "question": "Where can customer data be hosted?",
+      "current_answer": "Customers can choose US or EU hosting.",
+      "answer": "Customers can choose US or EU hosting.",
+      "source_version": "2026-09",
+      "citation": "DATA-02",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "INC-03",
+      "topic": "incident_notice",
+      "question": "What is the customer incident notification target?",
+      "current_answer": "Our notification target is within 48 hours of confirmation.",
+      "answer": "Our notification target is within 72 hours of confirmation.",
+      "source_version": "2026-01",
+      "citation": "INC-03",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "INC-03",
+      "topic": "incident_notice",
+      "question": "What is the customer incident notification target?",
+      "current_answer": "Our notification target is within 48 hours of confirmation.",
+      "answer": "Our notification target is within 48 hours of confirmation.",
+      "source_version": "2026-09",
+      "citation": "INC-03",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "ENC-04",
+      "topic": "encryption",
+      "question": "Is customer data encrypted at rest?",
+      "current_answer": "Customer data is encrypted at rest.",
+      "answer": "Customer data is encrypted at rest.",
+      "source_version": "2026-01",
+      "citation": "ENC-04",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "ENC-04",
+      "topic": "encryption",
+      "question": "Is customer data encrypted at rest?",
+      "current_answer": "Customer data is encrypted at rest.",
+      "answer": "Customer data is encrypted at rest.",
+      "source_version": "2026-09",
+      "citation": "ENC-04",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "LOG-05",
+      "topic": "audit_logs",
+      "question": "How long are audit logs retained by default?",
+      "current_answer": "Audit logs are retained for 90 days by default.",
+      "answer": "Audit logs are retained for 30 days by default.",
+      "source_version": "2026-01",
+      "citation": "LOG-05",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "LOG-05",
+      "topic": "audit_logs",
+      "question": "How long are audit logs retained by default?",
+      "current_answer": "Audit logs are retained for 90 days by default.",
+      "answer": "Audit logs are retained for 90 days by default.",
+      "source_version": "2026-09",
+      "citation": "LOG-05",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "SUB-06",
+      "topic": "subprocessor",
+      "question": "Where is the current subprocessor list maintained?",
+      "current_answer": "The current subprocessor list is maintained in the Trust Center.",
+      "answer": "The current subprocessor list is maintained in the Trust Center.",
+      "source_version": "2026-01",
+      "citation": "SUB-06",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "SUB-06",
+      "topic": "subprocessor",
+      "question": "Where is the current subprocessor list maintained?",
+      "current_answer": "The current subprocessor list is maintained in the Trust Center.",
+      "answer": "The current subprocessor list is maintained in the Trust Center.",
+      "source_version": "2026-09",
+      "citation": "SUB-06",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "MFA-07",
+      "topic": "mfa",
+      "question": "Is multi-factor authentication required for admin accounts?",
+      "current_answer": "MFA is required for admin accounts.",
+      "answer": "MFA is required for admin accounts.",
+      "source_version": "2026-01",
+      "citation": "MFA-07",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "MFA-07",
+      "topic": "mfa",
+      "question": "Is multi-factor authentication required for admin accounts?",
+      "current_answer": "MFA is required for admin accounts.",
+      "answer": "MFA is required for admin accounts.",
+      "source_version": "2026-09",
+      "citation": "MFA-07",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "BACK-08",
+      "topic": "backups",
+      "question": "How often are production backups performed?",
+      "current_answer": "Production backups are performed daily.",
+      "answer": "Production backups are performed daily.",
+      "source_version": "2026-01",
+      "citation": null,
+      "evaluation": {
+        "accurate": true,
+        "cited": false,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "citation_missing_or_wrong",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "BACK-08",
+      "topic": "backups",
+      "question": "How often are production backups performed?",
+      "current_answer": "Production backups are performed daily.",
+      "answer": "Production backups are performed daily.",
+      "source_version": "2026-09",
+      "citation": "BACK-08",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "EXPORT-09",
+      "topic": "exports",
+      "question": "Can customers export their audit log data?",
+      "current_answer": "Customers can export their audit logs.",
+      "answer": "This vendor is certified to ISO 27001.",
+      "source_version": "2026-01",
+      "citation": "EXPORT-09",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "EXPORT-09",
+      "topic": "exports",
+      "question": "Can customers export their audit log data?",
+      "current_answer": "Customers can export their audit logs.",
+      "answer": "Customers can export their audit logs.",
+      "source_version": "2026-09",
+      "citation": "EXPORT-09",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "PENTEST-10",
+      "topic": "penetration_tests",
+      "question": "Are third-party penetration tests performed annually?",
+      "current_answer": "Independent penetration tests are performed annually.",
+      "answer": "Independent penetration tests are performed annually.",
+      "source_version": "2026-01",
+      "citation": "PENTEST-10",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "PENTEST-10",
+      "topic": "penetration_tests",
+      "question": "Are third-party penetration tests performed annually?",
+      "current_answer": "Independent penetration tests are performed annually.",
+      "answer": "Independent penetration tests are performed annually.",
+      "source_version": "2026-09",
+      "citation": "PENTEST-10",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "DELETE-11",
+      "topic": "data_deletion",
+      "question": "What is the deletion window after termination?",
+      "current_answer": "Customer data is deleted within 60 days after termination.",
+      "answer": "Customer data is deleted within 30 days after termination.",
+      "source_version": "2026-01",
+      "citation": "DELETE-11",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "DELETE-11",
+      "topic": "data_deletion",
+      "question": "What is the deletion window after termination?",
+      "current_answer": "Customer data is deleted within 60 days after termination.",
+      "answer": "Customer data is deleted within 60 days after termination.",
+      "source_version": "2026-09",
+      "citation": "DELETE-11",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    },
+    {
+      "phase": "before_review",
+      "policy_id": "ACCESS-12",
+      "topic": "access_reviews",
+      "question": "How frequently are privileged access reviews performed?",
+      "current_answer": "Privileged access reviews are performed monthly.",
+      "answer": "Privileged access reviews are performed quarterly.",
+      "source_version": "2026-01",
+      "citation": "ACCESS-12",
+      "evaluation": {
+        "accurate": false,
+        "cited": true,
+        "current_source": false,
+        "publishable": false,
+        "findings": [
+          "answer_conflicts_with_current_policy",
+          "source_version_outdated"
+        ]
+      }
+    },
+    {
+      "phase": "after_refresh",
+      "policy_id": "ACCESS-12",
+      "topic": "access_reviews",
+      "question": "How frequently are privileged access reviews performed?",
+      "current_answer": "Privileged access reviews are performed monthly.",
+      "answer": "Privileged access reviews are performed monthly.",
+      "source_version": "2026-09",
+      "citation": "ACCESS-12",
+      "evaluation": {
+        "accurate": true,
+        "cited": true,
+        "current_source": true,
+        "publishable": true,
+        "findings": []
+      }
+    }
+  ]
+}

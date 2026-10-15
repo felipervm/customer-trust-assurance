@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "scope": "Synthetic assurance evidence lineage; not a real customer or Chainguard system",
+    "publication_policy": "Human security owner review required for every case",
+    "fingerprint": "SHA-256 of canonical JSON evidence record; integrity pointer only, not proof of authenticity"
+  },
+  "cases": [
+    {
+      "case_id": "REVIEW-EXPORT-09",
+      "policy_id": "EXPORT-09",
+      "question": "Can customers export their audit log data?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "yes",
+        "answer": "Customers can export their audit logs.",
+        "fingerprint": "a03d142692a0b40a359d76dff617c804ef77963244ce7fe3baa4213cd672a509"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "yes",
+        "answer": "Customers can export their audit logs.",
+        "fingerprint": "a03d142692a0b40a359d76dff617c804ef77963244ce7fe3baa4213cd672a509"
+      },
+      "prior_response": "This vendor is certified to ISO 27001.",
+      "citation_id": "EXPORT-09",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "block_and_escalate",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-ACCESS-12",
+      "policy_id": "ACCESS-12",
+      "question": "How frequently are privileged access reviews performed?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "quarterly",
+        "answer": "Privileged access reviews are performed quarterly.",
+        "fingerprint": "ce2575183e87389ea21280ee10830f8d96a391c3fd84d8783e806c36a5ad8085"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "monthly",
+        "answer": "Privileged access reviews are performed monthly.",
+        "fingerprint": "468b4de271ec223aa02b204407f93120aa36797754269c65ae22017190e6d29a"
+      },
+      "prior_response": "Privileged access reviews are performed quarterly.",
+      "citation_id": "ACCESS-12",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-AUTH-01",
+      "policy_id": "AUTH-01",
+      "question": "Is SSO available on all plans?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "all_plans",
+        "answer": "SSO is available on all plans.",
+        "fingerprint": "c9b77e378a3330034370cade039f6bcec930bc00b904f7e8fafb488acb6157f2"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "business_enterprise",
+        "answer": "SSO is available on Business and Enterprise plans only.",
+        "fingerprint": "c60d4875dc4723fcb9abbaea642b682b0257f1a0e3cc1377ab679ad210a0492f"
+      },
+      "prior_response": "SSO is available on all plans.",
+      "citation_id": "AUTH-01",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-BACK-08",
+      "policy_id": "BACK-08",
+      "question": "How often are production backups performed?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "daily",
+        "answer": "Production backups are performed daily.",
+        "fingerprint": "398acae0af00304d71f4516c1abbe2ac144273232c0f19b4d7de910c2305f261"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "daily",
+        "answer": "Production backups are performed daily.",
+        "fingerprint": "398acae0af00304d71f4516c1abbe2ac144273232c0f19b4d7de910c2305f261"
+      },
+      "prior_response": "Production backups are performed daily.",
+      "citation_id": null,
+      "evaluation_findings": [
+        "citation_missing_or_wrong",
+        "source_version_outdated"
+      ],
+      "proposed_action": "repair_evidence_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-DATA-02",
+      "policy_id": "DATA-02",
+      "question": "Where can customer data be hosted?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "us_only",
+        "answer": "Customer data is hosted in the United States only.",
+        "fingerprint": "a456fb96a5fd309a00979e7334b196657b0b20a3b5736b54155881e3f0140a7d"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "us_eu",
+        "answer": "Customers can choose US or EU hosting.",
+        "fingerprint": "45b657467597d5e53dbd4162ffb47c09d993b794d6fd012fdc77b000164e0402"
+      },
+      "prior_response": "Customer data is hosted in the United States only.",
+      "citation_id": "DATA-02",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-DELETE-11",
+      "policy_id": "DELETE-11",
+      "question": "What is the deletion window after termination?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "30_days",
+        "answer": "Customer data is deleted within 30 days after termination.",
+        "fingerprint": "f3eb4cce2f3ced47957f8e91472fc402b85c6897ea943392baaead1318a7f738"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "60_days",
+        "answer": "Customer data is deleted within 60 days after termination.",
+        "fingerprint": "593d152a8224333f6d15a39ec86efb7ca074e0defa59d08bfe1d7b5d21c9e4cd"
+      },
+      "prior_response": "Customer data is deleted within 30 days after termination.",
+      "citation_id": "DELETE-11",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-INC-03",
+      "policy_id": "INC-03",
+      "question": "What is the customer incident notification target?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "72_hours",
+        "answer": "Our notification target is within 72 hours of confirmation.",
+        "fingerprint": "66d35df32b97a335a4596cecb221e36f3c17f3d0e3cbd6077c8e70914422ea49"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "48_hours",
+        "answer": "Our notification target is within 48 hours of confirmation.",
+        "fingerprint": "ded2a78407c8bceb69504678d3c4e4ce88a93bbe1fbb2c869adf9ba1502320ad"
+      },
+      "prior_response": "Our notification target is within 72 hours of confirmation.",
+      "citation_id": "INC-03",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-LOG-05",
+      "policy_id": "LOG-05",
+      "question": "How long are audit logs retained by default?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "30_days",
+        "answer": "Audit logs are retained for 30 days by default.",
+        "fingerprint": "c7e5409ca6cba1a438fe794bff4915ad964f647779e8f8dfc8778ff524f47783"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "90_days",
+        "answer": "Audit logs are retained for 90 days by default.",
+        "fingerprint": "e49d2a463e561d23e28b425c79cb0ef81268a491b771e3c3be8f36e7844a36e6"
+      },
+      "prior_response": "Audit logs are retained for 30 days by default.",
+      "citation_id": "LOG-05",
+      "evaluation_findings": [
+        "answer_conflicts_with_current_policy",
+        "source_version_outdated"
+      ],
+      "proposed_action": "rewrite_and_review",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-ENC-04",
+      "policy_id": "ENC-04",
+      "question": "Is customer data encrypted at rest?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "yes",
+        "answer": "Customer data is encrypted at rest.",
+        "fingerprint": "298a48319f38d746952cd04b6344216e53d733b2c2854a3726cc66e3c33c64ab"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "yes",
+        "answer": "Customer data is encrypted at rest.",
+        "fingerprint": "298a48319f38d746952cd04b6344216e53d733b2c2854a3726cc66e3c33c64ab"
+      },
+      "prior_response": "Customer data is encrypted at rest.",
+      "citation_id": "ENC-04",
+      "evaluation_findings": [
+        "source_version_outdated"
+      ],
+      "proposed_action": "revalidate_provenance",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-MFA-07",
+      "policy_id": "MFA-07",
+      "question": "Is multi-factor authentication required for admin accounts?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "required",
+        "answer": "MFA is required for admin accounts.",
+        "fingerprint": "403ec635ba09ba243c87e788d4142a42837b8c89c52d9fbce05644bedd7bcca3"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "required",
+        "answer": "MFA is required for admin accounts.",
+        "fingerprint": "403ec635ba09ba243c87e788d4142a42837b8c89c52d9fbce05644bedd7bcca3"
+      },
+      "prior_response": "MFA is required for admin accounts.",
+      "citation_id": "MFA-07",
+      "evaluation_findings": [
+        "source_version_outdated"
+      ],
+      "proposed_action": "revalidate_provenance",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-PENTEST-10",
+      "policy_id": "PENTEST-10",
+      "question": "Are third-party penetration tests performed annually?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "annual",
+        "answer": "Independent penetration tests are performed annually.",
+        "fingerprint": "51ff1c4294ee9117a36d357a539fb6a4513769f36fd58855e6c590d764f9aba6"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "annual",
+        "answer": "Independent penetration tests are performed annually.",
+        "fingerprint": "51ff1c4294ee9117a36d357a539fb6a4513769f36fd58855e6c590d764f9aba6"
+      },
+      "prior_response": "Independent penetration tests are performed annually.",
+      "citation_id": "PENTEST-10",
+      "evaluation_findings": [
+        "source_version_outdated"
+      ],
+      "proposed_action": "revalidate_provenance",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    },
+    {
+      "case_id": "REVIEW-SUB-06",
+      "policy_id": "SUB-06",
+      "question": "Where is the current subprocessor list maintained?",
+      "prior_evidence": {
+        "version": "2026-01",
+        "value": "trust_center",
+        "answer": "The current subprocessor list is maintained in the Trust Center.",
+        "fingerprint": "a6a890b5352a55931d1307b2f33168aad453ba54652486b216d618629cc99743"
+      },
+      "current_evidence": {
+        "version": "2026-09",
+        "value": "trust_center",
+        "answer": "The current subprocessor list is maintained in the Trust Center.",
+        "fingerprint": "a6a890b5352a55931d1307b2f33168aad453ba54652486b216d618629cc99743"
+      },
+      "prior_response": "The current subprocessor list is maintained in the Trust Center.",
+      "citation_id": "SUB-06",
+      "evaluation_findings": [
+        "source_version_outdated"
+      ],
+      "proposed_action": "revalidate_provenance",
+      "audit_note": "Automated triage recommendation only. A security owner must verify the underlying evidence and approve any external answer."
+    }
+  ]
+}

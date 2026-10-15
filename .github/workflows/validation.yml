@@ -1,0 +1,21 @@
+name: Assurance simulation checks
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild deterministic outputs
+        run: |
+          python src/build_site.py
+          python src/build_queue.py
+          python src/operational_export.py
+      - name: Test audit logic and export
+        run: python -m unittest discover -s tests -v
+      - name: Verify published artifacts are reproducible
+        run: git diff --exit-code -- data/evaluation.json data/review_queue.json data/review_handoff.csv data/evidence_lineage.json index.html review-queue.html site/index.html site/review-queue.html

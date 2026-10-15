@@ -1,0 +1,22 @@
+{
+  "disclaimer": "Entirely fictional vendor, policies, and customer questions. This project makes no factual claim about Chainguard controls or security practices.",
+  "vendor": "Northstar Cloud (fictional)",
+  "versions": [
+    {"id":"2026-01","effective":"2026-01-01","status":"superseded"},
+    {"id":"2026-09","effective":"2026-09-01","status":"current"}
+  ],
+  "policies": [
+    {"id":"AUTH-01","topic":"sso","question":"Is SSO available on all plans?","versions":{"2026-01":{"value":"all_plans","answer":"SSO is available on all plans."},"2026-09":{"value":"business_enterprise","answer":"SSO is available on Business and Enterprise plans only."}}},
+    {"id":"DATA-02","topic":"data_residency","question":"Where can customer data be hosted?","versions":{"2026-01":{"value":"us_only","answer":"Customer data is hosted in the United States only."},"2026-09":{"value":"us_eu","answer":"Customers can choose US or EU hosting."}}},
+    {"id":"INC-03","topic":"incident_notice","question":"What is the customer incident notification target?","versions":{"2026-01":{"value":"72_hours","answer":"Our notification target is within 72 hours of confirmation."},"2026-09":{"value":"48_hours","answer":"Our notification target is within 48 hours of confirmation."}}},
+    {"id":"ENC-04","topic":"encryption","question":"Is customer data encrypted at rest?","versions":{"2026-01":{"value":"yes","answer":"Customer data is encrypted at rest."},"2026-09":{"value":"yes","answer":"Customer data is encrypted at rest."}}},
+    {"id":"LOG-05","topic":"audit_logs","question":"How long are audit logs retained by default?","versions":{"2026-01":{"value":"30_days","answer":"Audit logs are retained for 30 days by default."},"2026-09":{"value":"90_days","answer":"Audit logs are retained for 90 days by default."}}},
+    {"id":"SUB-06","topic":"subprocessor","question":"Where is the current subprocessor list maintained?","versions":{"2026-01":{"value":"trust_center","answer":"The current subprocessor list is maintained in the Trust Center."},"2026-09":{"value":"trust_center","answer":"The current subprocessor list is maintained in the Trust Center."}}},
+    {"id":"MFA-07","topic":"mfa","question":"Is multi-factor authentication required for admin accounts?","versions":{"2026-01":{"value":"required","answer":"MFA is required for admin accounts."},"2026-09":{"value":"required","answer":"MFA is required for admin accounts."}}},
+    {"id":"BACK-08","topic":"backups","question":"How often are production backups performed?","versions":{"2026-01":{"value":"daily","answer":"Production backups are performed daily."},"2026-09":{"value":"daily","answer":"Production backups are performed daily."}}},
+    {"id":"EXPORT-09","topic":"exports","question":"Can customers export their audit log data?","versions":{"2026-01":{"value":"yes","answer":"Customers can export their audit logs."},"2026-09":{"value":"yes","answer":"Customers can export their audit logs."}}},
+    {"id":"PENTEST-10","topic":"penetration_tests","question":"Are third-party penetration tests performed annually?","versions":{"2026-01":{"value":"annual","answer":"Independent penetration tests are performed annually."},"2026-09":{"value":"annual","answer":"Independent penetration tests are performed annually."}}},
+    {"id":"DELETE-11","topic":"data_deletion","question":"What is the deletion window after termination?","versions":{"2026-01":{"value":"30_days","answer":"Customer data is deleted within 30 days after termination."},"2026-09":{"value":"60_days","answer":"Customer data is deleted within 60 days after termination."}}},
+    {"id":"ACCESS-12","topic":"access_reviews","question":"How frequently are privileged access reviews performed?","versions":{"2026-01":{"value":"quarterly","answer":"Privileged access reviews are performed quarterly."},"2026-09":{"value":"monthly","answer":"Privileged access reviews are performed monthly."}}}
+  ]
+}
