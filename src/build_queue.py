@@ -1,17 +1,26 @@
-"""Generate a self-contained, public-safe review-queue demo from synthetic test cases."""
+"""Build both standalone reviewer handoff pages from the deterministic queue."""
 import json
 from triage import ROOT, queue
 
-TEMPLATE='''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A fictional security assurance change-impact triage board, built by Felipe Mattos."><title>Review Queue — Can We Still Trust This Answer?</title><style>
-:root{--bg:#f4f5f2;--ink:#18261f;--quiet:#536357;--line:#d5ded6;--accent:#164a36;--warn:#9e4326}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}.wrap{max-width:1100px;margin:auto;padding:0 22px}header{padding:25px 0;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px;font-size:13px}h1{font-size:clamp(44px,7vw,82px);letter-spacing:-.065em;line-height:1;margin:48px 0 22px}h2{font-size:24px;letter-spacing:-.04em}p{max-width:720px;color:var(--quiet)}.kicker{font-size:12px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:34px 0}.stat{background:white;padding:20px;border:1px solid var(--line)}.stat b{display:block;font-size:39px;letter-spacing:-.06em}.stat span{font-size:12px;color:var(--quiet)}.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:35px 0 15px}select{background:white;border:1px solid var(--line);padding:12px;font:inherit;max-width:100%}.item{border:1px solid var(--line);background:white;margin-bottom:10px}.item summary{cursor:pointer;list-style:none;padding:20px;display:grid;grid-template-columns:85px 1fr auto;gap:18px;align-items:center}.item summary::-webkit-details-marker{display:none}.pill{background:#e7eee9;color:var(--accent);border-radius:99px;padding:5px 8px;font-size:12px;font-weight:750;width:max-content}.p0{background:#ffebe5;color:#922f1c}.p1{background:#fef2e2;color:#814b12}.item h3{font-size:16px;margin:0}.item summary small{color:var(--quiet)}.content{border-top:1px solid var(--line);padding:16px 20px 22px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.content strong{font-size:12px;text-transform:uppercase;letter-spacing:.06em}.content p{margin:5px 0 12px;color:var(--ink)}footer{border-top:1px solid var(--line);margin-top:44px;padding:25px 0 50px;color:var(--quiet);font-size:13px}.note{font-size:13px}.empty{padding:25px}a:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #357e5c;outline-offset:2px}@media(max-width:720px){.stats{grid-template-columns:repeat(2,1fr)}.item summary{grid-template-columns:58px 1fr;gap:10px}.item summary small{grid-column:2}.content{grid-template-columns:1fr}}
-</style></head><body><div class="wrap"><header><a href="./">← Back to the case</a><span>FELIPE MATTOS / INDEPENDENT CASE</span></header><main><div class="kicker" style="margin-top:45px">Assurance operations / Synthetic prototype</div><h1>What needs<br>review first?</h1><p>I wasn't trying to build another chatbot. I wanted to see how a security team could sort through customer-facing answers after the underlying policies change — without letting an AI system approve its own claims.</p><div class="stats" id="stats"></div><div class="controls"><div><h2 style="margin:0">The review queue</h2><p class="note">Priorities are illustrative, not measured risk or production SLAs.</p></div><label for="filter">Show <select id="filter"><option value="all">All decisions</option><option value="P0">P0 — Escalate</option><option value="P1">P1 — Rewrite / repair</option><option value="P2">P2 — Revalidate</option></select></label></div><div id="items" aria-live="polite"></div><p class="note">Every item remains blocked from customer publication until a security owner approves it. All policies, answers, and assignments are fictional.</p></main><footer><a href="https://github.com/felipervm">Felipe Mattos</a> · Customer trust is a review process, not an AI confidence score. · No affiliation with Chainguard.</footer></div><script id="queue-data" type="application/json">__PAYLOAD__</script><script>
-const payload=JSON.parse(document.querySelector('#queue-data').textContent);const stats=document.querySelector('#stats'),target=document.querySelector('#items'),filter=document.querySelector('#filter');const cards=[['12','answers reviewed'],['1','unsupported claim escalated'],['7','policy changes / citation gaps'],['4','provenance-only reviews']];stats.innerHTML=cards.map(([n,label])=>`<div class="stat"><b>${n}</b><span>${label}</span></div>`).join('');function text(tag,value,className){const e=document.createElement(tag);e.textContent=value;if(className)e.className=className;return e}function render(){target.replaceChildren();let items=payload.items.filter(x=>filter.value==='all'||x.priority===filter.value);if(!items.length){target.append(text('p','No cases in this category.','empty'));return}items.forEach(x=>{const d=text('details','','item'),s=document.createElement('summary');s.append(text('span',x.priority,'pill '+x.priority.toLowerCase()));const title=document.createElement('div');title.append(text('h3',x.question),text('small',x.reason.replaceAll('_',' ')));s.append(title,text('small',x.owner));d.append(s);const detail=document.createElement('div');detail.className='content';const a=document.createElement('div'),b=document.createElement('div');a.append(text('strong','Previously shared answer'),text('p',x.evidence.previous_claim),text('strong','Current approved policy text'),text('p',x.evidence.approved_current_text));b.append(text('strong','Next action'),text('p',x.action),text('strong','Assigned review team'),text('p',x.owner),text('strong','Evidence version'),text('p',x.source_version+' → '+x.required_version));detail.append(a,b);d.append(detail);target.append(d)})}filter.addEventListener('change',render);render();
-</script></body></html>'''
+
+def render(payload):
+    template=(ROOT/'site/queue-template.html').read_text(encoding='utf-8')
+    replacements={
+      '__PAYLOAD__':json.dumps(payload,separators=(',',':'),ensure_ascii=False).replace('<','\\u003c'),
+      '__QUEUE_THEME__':(ROOT/'site/queue-theme.css').read_text(encoding='utf-8'),
+      '__QUEUE_APP__':(ROOT/'site/queue-app.js').read_text(encoding='utf-8'),
+    }
+    for token,value in replacements.items():
+        if template.count(token)!=1:
+            raise ValueError(f'Expected one queue token: {token}')
+        template=template.replace(token,value)
+    return template
+
 
 def main():
-    payload=queue()
-    inline=json.dumps(payload,separators=(',',':'),ensure_ascii=False).replace('<','\\u003c')
-    for path in (ROOT/'review-queue.html',ROOT/'site'/'review-queue.html'):
-        path.write_text(TEMPLATE.replace('__PAYLOAD__',inline),encoding='utf-8')
+    rendered=render(queue())
+    for path in (ROOT/'review-queue.html',ROOT/'site/review-queue.html'):
+        path.write_bytes(rendered.encode('utf-8'))
     print('Built synthetic review-queue demo')
-if __name__=='__main__': main()
+
+if __name__=='__main__':main()

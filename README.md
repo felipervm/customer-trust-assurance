@@ -61,9 +61,9 @@ python -m unittest discover -s tests -v
 
 This writes `data/review_queue.json` and two self-contained, accessible review-board pages, `review-queue.html` and `site/review-queue.html`. The original landing page links to the board.
 
-**Constructed fixture results:** 1 unsupported claim (P0), 6 changed policies plus 1 missing citation (P1), and 4 stale-provenance-only cases (P2). All 12 are blocked pending human approval. These labels are illustrative and **not** real Chainguard workflows or security risk scores. The project now has **20 passing unit tests**.
+**Constructed fixture results:** 1 unsupported claim (P0), 6 changed policies plus 1 missing citation (P1), and 4 stale-provenance-only cases (P2). All 12 are blocked pending human approval. These labels are illustrative and **not** real Chainguard workflows or security risk scores. The automated tests cover the assurance checks, triage decisions and operational exports.
 
-Research into Chainguard's public Trust Center and its October 7, 2026 Compliance Dashboard announcement is documented separately in `docs/research_and_operating_model.md`. Those public sources frame the relevance of the question, not evidence of an internal problem.
+Public company context and the proposed operating model are documented in `docs/research_and_operating_model.md`. This exercise follows the supplied role responsibilities; it does not establish any internal company problem.
 
 ## v3: Evidence traceability and reviewer handoff
 
@@ -81,3 +81,14 @@ python -m unittest discover -s tests -v
 - `.github/workflows/validation.yml` — rebuilds all public fixtures, runs unit tests, and rejects drift between code and published artifacts.
 
 All priorities, teams, approval states and cases are fictional. No automated customer publication, approval, external LLM, security assessment, or company performance measurements are involved. The next real-world validation step would be an owner-reviewed pilot on non-sensitive questionnaire templates and approved source references.
+## Presentation redesign
+
+The presentation now follows the operational decision: inspect a source change, separate four review patterns, and follow the evidence into a reviewer handoff. The opening artwork is an original HTML/CSS diagram inspired by the editorial composition of TWKS and Chainguard's violet/black palette. It is not a company product screenshot.
+
+The landing page includes four representative cases, stale/refreshed fixture comparison, three independent checks, an all-12-topic selector, and a persistent human-review gate. Queue category links open the corresponding reason filter. The full board retains all priority filters and source/action details; every item remains publication-blocked.
+
+Edit `site/template.html`, `site/styles.css` and `site/app.js` for the landing page. The board uses `site/queue-template.html`, `site/queue-theme.css` and `site/queue-app.js`. Run `python src/build_site.py` and `python src/build_queue.py` after presentation changes. Both root and `/site/` pages embed their assets and data and remain byte-identical, with no external runtime dependencies. Do not edit generated HTML directly.
+
+The supplied author portrait is stored at `site/assets/felipe-mattos.jpg`. `docs/application_notes.md` maps the supplied role to actual repository evidence and offers an application snippet and interview walkthrough. It does not imply prior employment, production agent maintenance or real customer outcomes.
+
+Presentation tests additionally check payload/source agreement, exact rebuilds, local link targets and safe JSON embedding. Existing assurance, triage and export tests remain in place. Refreshed fixtures passing the three defined checks still require human security-owner approval; they are not authorized customer responses.

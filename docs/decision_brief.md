@@ -8,7 +8,7 @@ A customer asks for a security answer. The approved source has changed since the
 
 ### Why I chose this question
 
-Chainguard already operates a Trust Center, and on October 7, 2026 announced its Compliance Dashboard with more directly accessible, digest-specific compliance evidence. Its Governance & Trust job description emphasizes accurate questionnaire content and AI-agent maintenance. Those are public observations, not proof of internal inefficiencies.
+The supplied Governance and Trust job description emphasizes keeping questionnaire responses and customer-facing security content current, alongside maintaining and auditing AI agents. I chose a small source-change exercise to demonstrate the review decisions behind those responsibilities. It does not establish an internal problem at Chainguard.
 
 ### What I tested
 
@@ -21,7 +21,7 @@ I built a fully fictional 12-policy questionnaire corpus with two versions, then
 - **1 missing citation:** repair the evidence and ask the owner to verify.
 - **4 unchanged claims with stale provenance:** refresh the source record and obtain confirmation.
 
-All **12/12** baseline answers remain blocked pending security-owner review; **20/20** automated tests pass. These are results from deliberately constructed fixtures, not customer incident counts, operational savings or AI-model benchmarks.
+All **12/12** baseline answers remain blocked pending security-owner review. The refreshed fixtures pass the three defined checks for structured claim consistency, citation ID and source-version freshness; passing those checks is not human approval to publish. These are results from deliberately constructed fixtures, not customer incident counts, operational savings or AI-model benchmarks. Automated counterexample tests check the evaluation and triage rules; the repository's validation workflow reports the current test result.
 
 ### Recommendation
 
