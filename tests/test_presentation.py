@@ -20,9 +20,14 @@ class PresentationTests(unittest.TestCase):
             match=re.search(r'<script type="application/json" id="'+script_id+r'">(.*?)</script>',html,re.S)
             self.assertIsNotNone(match)
             self.assertEqual(json.loads(match.group(1)),expected)
-        image=re.search(r'src="data:image/jpeg;base64,([^"]+)"',html)
-        self.assertIsNotNone(image)
-        self.assertEqual(base64.b64decode(image.group(1)),(ROOT/'site/assets/felipe-mattos.jpg').read_bytes())
+        images=re.findall(r'<img\b[^>]*src="data:image/jpeg;base64,([^"]+)"',html)
+        self.assertEqual({base64.b64decode(value) for value in images},{
+            (ROOT/'site/assets/felipe-mattos.jpg').read_bytes(),
+            (ROOT/'site/assets/trust-records.jpg').read_bytes(),
+        })
+        font=re.search(r'data:font/woff2;base64,([A-Za-z0-9+/=]+)',html)
+        self.assertIsNotNone(font)
+        self.assertEqual(base64.b64decode(font.group(1)),(ROOT/'site/assets/fonts/manrope-latin.woff2').read_bytes())
     def test_script_payload_cannot_terminate_its_container(self):
         value={'answer':'</script><script>alert(1)</script>'}
         encoded=json_script(value)

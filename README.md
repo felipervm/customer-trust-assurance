@@ -92,3 +92,9 @@ Edit `site/template.html`, `site/styles.css` and `site/app.js` for the landing p
 The supplied author portrait is stored at `site/assets/felipe-mattos.jpg`. `docs/application_notes.md` maps the supplied role to actual repository evidence and offers an application snippet and interview walkthrough. It does not imply prior employment, production agent maintenance or real customer outcomes.
 
 Presentation tests additionally check payload/source agreement, exact rebuilds, local link targets and safe JSON embedding. Existing assurance, triage and export tests remain in place. Refreshed fixtures passing the three defined checks still require human security-owner approval; they are not authorized customer responses.
+
+## Further presentation refinement
+
+The landing page now includes original ImageGen concept artwork, locally embedded Manrope typography, a source-to-answer scroll story and additional interactive explanations. The copy uses natural questions and short first-person explanations while retaining the rules-based simulation boundary. Asset provenance and the full generation prompt are documented in `docs/visual_direction.md`.
+
+The image and font are built from `site/assets/trust-records.jpg` and `site/assets/fonts/manrope-latin.woff2`; their data URIs are embedded alongside the author portrait, CSS, JavaScript and fixture JSON. Both published entry points still rebuild identically. The research model, review-queue classifications and mandatory human approval boundary remain authoritative.
